@@ -1,39 +1,5 @@
-{
-  "version": 2.0,
-  "questions": [
-    {
-      "question": "This is a Sample Question 1?",
-      "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "This is a Sample Question 2?",
-      "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
-    }
-  ]
-}
+[{"question":"________ is a three-port microwave device that can be lossless and matched at all spots.","answers":{"a":"Hybrid junction","b":"Magic Tee","c":"Circulator","d":"Isolator"},"correctAnswer":"c"},
+{"question":"The total number of ones in the scattering matrix of an ideal circulator is:","answers":{"a":4,"b":3,"c":2,"d":5},"correctAnswer":"b"},
+{"question":"A circulator device can also used as an isolator with a few modifications.","answers":{"a":"True","b":"False"},"correctAnswer":"a"},
+{"question":"What is the primary characteristic of a circulator?","answers":{"a":"It is round in shape","b":"It must be free to rotate","c":"Energy is evenly distributed among all ports","d":"Energy entering one port is coupled to an adjacent port, but to no other ports"},"correctAnswer":"d"},
+{"question":"In which resonance region do most waveguide circulators operate?","answers":{"a":"Above resonance","b":"Below resonance","c":"Both above and below resonance","d":"Neither above nor below resonance"},"correctAnswer":"b"}]
