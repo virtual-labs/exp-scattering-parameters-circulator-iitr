@@ -9,8 +9,6 @@
   <script src="js/jquery-ui.min.js"></script>
   <script src="js/knockout-2.2.1.js"></script>
 
-
-  
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <script src="js/sevenSeg.js"></script>
   <script src="js/demo.js"></script>
@@ -20,7 +18,6 @@
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'></link>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <script>
-  
     var gtemp="";
     function reset() {
       window.location.reload()
@@ -42,8 +39,8 @@
                           hideClass: {
                             popup: 'animate__animated animate__fadeOut'
                           },
-                        html: '<div style="font-size:16px;">Setup for recording V1 values</div>',
-                        imageUrl: "images/setup1.jpeg",
+                        html: '<div style="font-size:16px;">Setup for recording V2 values</div>',
+                        imageUrl: "images/setup2.jpeg",
                         imageWidth: 450,
                         imageHeight: 200,
                         imageAlt: "Setup",
@@ -58,9 +55,8 @@
       ev.dataTransfer.setData("text", ev.target.id);
       gtemp=ev.target.id+"s"
       
-      
-
     }
+
     function appear() {
       document.getElementById("stand").style.visibility = "visible";
       document.getElementById("images").style.visibility = "visible";
@@ -70,18 +66,31 @@
       document.getElementById("gg").style.opacity = "1";
       document.getElementById("space").style.visibility = "visible";
       document.getElementById("exph").style.marginLeft = "243px";
-      document.getElementById("exph").style.width = "1004px";
+      document.getElementById("exph").style.width = "1014px";
       document.getElementById("grpwrap").style.visibility= "visible"
+      document.getElementById("images2").style.visibility = "hidden";
+      document.getElementById("images2").style.opacity = "0";
+      document.getElementById("images2").style.display = "none";
+      document.getElementById("images").style.visibility = "visible";
+      document.getElementById("images").style.opacity = "1";
+      document.getElementById("images").style.display = "block";
+    }
+    function next(){
+      document.getElementById("images").style.visibility = "hidden";
+      document.getElementById("images").style.opacity = "0";
+      document.getElementById("images").style.display = "none";
+      document.getElementById("images2").style.visibility = "visible";
+      document.getElementById("images2").style.opacity = "1";
+      document.getElementById("images2").style.display = "block";
     }
     function hov() {
       document.getElementById("container").style.visibility = "visible";
      
     }
-    function hide(){
-        
-        document.getElementById("container").style.visibility = "hidden";
-      
-      }
+    function hide() {
+      document.getElementById("container").style.visibility = "hidden";
+     
+    }
     function drop(ev, target) {
       ev.preventDefault();
       var da = target;
@@ -114,11 +123,12 @@ return;
   }
       target.appendChild(document.getElementById(data));
       document.getElementById(gtemp).style.display="block";
-      if($("#drag1").parents("#div1").length == 1 && $("#drag4").parents("#div4").length == 1)
+      if($("#drag1").parents("#div1").length == 1 && $("#drag6").parents("#div6").length == 1)
       {
         document.getElementById("con").style.visibility = "visible";
         document.getElementById("check11").disabled=false;
       }
+      
       var op=data+"s";
       document.getElementById(op).style.opacity=0.5;
       document.getElementById(op).draggable=false;
@@ -127,103 +137,90 @@ return;
 
   </script>
 </head>
-<link rel="stylesheet" href="css/task7.css">
+<link rel="stylesheet" href="css/task9.css">
 
 <body  >
 <div id="box">
 <div class="mainn">
   <table>
-   
+    
       
     </tr>
 <tr>
 
   <td>
-   
    <div id="exph">
-    <h2 id="expm"> To Measure Scattering Parameters of Circulator. &emsp; &emsp; &emsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <button ondblclick="hide()" onclick="hov()" id="help">INSTRUCTIONS</button> </h2>
-   
-    
+    <h2 id="expm">  To Measure Scattering Parameters of Circulator. &emsp; &emsp; &emsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <button ondblclick="hide()" onclick="hov()" id="help">INSTRUCTIONS</button> </h2>
     </div>
     <div id="container">
       <div id="carouselContent" class="carousel" data-interval="false">
           <div class="carousel-inner" role="listbox">
-              <div class="carousel-item active ">
-                  Click on Components button for components to pop up.
-              </div>
-              <div class="carousel-item ">
-                  
-                  Click on the component, drag them to the test bench and place them as shown in the experiment setup.
-              </div>
-              <div class="carousel-item ">
-                  
-                After placing the components on the test bench, connect the wires accordingly.
-            </div>
-            <div class="carousel-item ">
-                  
-             To check your connections  click on "Check Connections" button.
+            <div class="carousel-item active ">
+              Click on Components button for components to pop up.
           </div>
           <div class="carousel-item ">
-                  
-           If your connections are correct then you may continue to take down the readings, if not then click on "Reset Button" and try it again.
-         </div>
-         <div class="carousel-item ">
-                  
-         Move the "Beam Voltage" knob and set it to 250 or above to record your readings.
+              
+              Click on the component, drag them to the test bench and place them as shown in the experiment setup.
+          </div>
+          <div class="carousel-item ">
+              
+            After placing the components on the test bench, connect the wires accordingly.
         </div>
         <div class="carousel-item ">
+              
+         To check your connections  click on "Check Connections" button.
+      </div>
+      <div class="carousel-item ">
+              
+       If your connections are correct then you may continue to take down the readings, if not then click on "Reset Button" and try it again.
+     </div>
+     
+    <div class="carousel-item ">
+              
+      Toggle the switch button and observe the waveform on CRO for same value of Reflector Voltage.
+     </div>
+     <div class="carousel-item ">
+              
+     Now the waveform observed will be different as we are taking output from port 2 of a circulator using detector mount.
+     </div>
+     <div class="carousel-item ">
+              
+      Toggle the switch button and observe the waveform on CRO for same value of Reflector Voltage.
+     </div>
+     
+     <div class="carousel-item ">
+              
+      Note down the number of division in input box for V2.
+     </div>
+     <div class="carousel-item ">
+              
+      Click on "Add to table" button to record the readings for V2.
+     </div>
+     <div class="carousel-item ">
                   
-          Toggle the switch button and move the "Reflector Voltage" knob to set the reflector voltage to maximum negative value.
-         </div>
-         <div class="carousel-item ">
-                  
-         As soon as you start varying the reflector voltage you will observe a waveform on CRO.
-         </div>
-         <div class="carousel-item ">
-                  
-          Keep varying the "Reflector voltage" till you get square waveform on CRO.
-         </div>
-         <div class="carousel-item ">
-                  
-          As soon as you observe square waveform on CRO, count the division covered by the square waveform.
-         </div>
-         <div class="carousel-item ">
-                  
-          Note down the number of division in input box for V1.
-         </div>
-         <div class="carousel-item ">
-                  
-          Click on "Add to table" button to record the readings for V1, Beam Voltage and Reflector Voltage.
-         </div>
-         <div class="carousel-item ">
-                  
-          Click on 'Print' button to print your current page (readings and connections) or to save your page (readings and connections) in a PDF form.
-         </div>
-         <div class="carousel-item ">
-                  
-          Click on "Next" button.
-         </div>
+      Click on 'Print' button to print your current page (readings and connections) or to save your page (readings and connections) in a PDF form.
+     </div>
+     <div class="carousel-item ">
+              
+      Click on "Next" button.
+     </div>
           </div>
           <a class="carousel-control-prev" href="#carouselContent" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
            
         </a>
           <a class="carousel-control-next" href="#carouselContent" role="button" data-slide="next">
-            
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              
+             
           </a>
-        
       </div>
   </div>
-    
-    
     
     <div  id="gg"  ondragover="allowDrop(event)">
       <table id="images1">
         <tr>
           <td id="headingg1" >
-            <h2 style="margin-bottom: 1px;">
+            <h2 style="margin-bottom: 1px; padding-left: 60px;">
               READINGS
             </h2>
             
@@ -237,7 +234,7 @@ return;
           </td></tr>
          <tr>
            <td style="padding-left: 10px; ">
-             Click on Add to table to add on the value for V1.
+             Click on Add to table to add on the value for V2.
            </td>
          </tr>
         
@@ -281,7 +278,6 @@ return;
               mV
             </td>
           </tr>
-         
         </tr>
         
       </table>
@@ -300,11 +296,11 @@ return;
         
         <tr>
           <td>
-            V1:
+            V2:
 
           </td>
          <td >
-           <input  id="V1"  >
+           <input  id="V2"  >
          </td>
 <td>
   x volt/div
@@ -331,108 +327,175 @@ return;
         </tr>
       </table>
     
-     
+      <tr >
+        <td id="addto" >
+          <button id="add" onclick="validate()">Add To Table</button>
+        </td>
+      </tr>
     </tr>
-<tr >
-          <td id="addto" >
-            <button id="add" onclick="validate()">Add To Table</button>
-          </td>
-        </tr>
-        </table>
-
-
-      <table id="images">
+    <tr>
+   
+    <table id="images2">
       <tr>
-        <td id="headingg" >
-          <h2 style="margin-bottom: 10px ;margin-top: 13px;">
+        <td id="comp" >
+          <h2 id="headingg">
             COMPONENTS
           </h2>
-          <hr>
+          <hr >
         </td>
       </tr>
           
         <tr>
-          <td>
-            <table id="ctab">
-        <tr >
-          
-          <td >
-            <img id="drag2" src="images/isolator.png" draggable="true" ondragstart="drag(event)" width="80"
-            height="50" data-div="div2">
-            <img  id="drag2s" src="images/isolator.png" height="50" width="80" style="display: none;">
+      <td>
+
+      <table id="ctab">
+        <tr>
+          <td style="padding-left: 30px;" >
+            <img id="drag6" src="images/detector.png" draggable="true" ondragstart="drag(event)" width="70"
+            height="38" data-div="div6">
+            <img id="drag6s" src="images/detector.png"  height="38" width= "50" style="display: none;" >
           </td>
         </tr>
         <tr>
           <td class="imgr">
-            Isolator
+           Detector Mount
           </td>
         </tr>
+        
+      
+     
+        <tr>
+          <td style="padding-left: 30px; padding-top: 20px; padding-bottom: 5px;">
+            <img id="drag0" src="images/matchedt1.png" draggable="true" ondragstart="drag(event)" width="70"
+            height="20" data-div="div0">
+            <img id="drag0s" src="images/matchedt1.png"  height="20" width="70" style="display: none;">
+          </td>
+        </tr>
+        <tr>
+          <td class="imgr">
+            Matched Terminator
+          </td>
+        </tr>
+      
+        <tr>
+          <td style="padding-left: 40px;padding-top: 20px;" >
+            <img id="drag10" src="images/circulator.png" draggable="true" ondragstart="drag(event)" width="60"
+            height="60" data-div="div10">
+            <img id="drag10s" src="images/circulator.png"  height="40" width="40" style="display: none;" >
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="imgr">
+Circulator
+          </td>
+        </tr>
+          
+          
+      </table>
+      
+    </tr>
+
+        </table>
+
+      <table id="images">
+      <tr>
+        <td id="comp" >
+          <h2 id="headingg">
+            COMPONENTS
+          </h2>
+          <hr >
+        </td>
+      </tr>
+          
+        <tr>
+      <td>
+
+      <table id="ctab">
+        
           <tr>
-          <td style="padding-left: 20px;">
-            <img id="drag3" src="images/attenuator.png" draggable="true" ondragstart="drag(event)" width="70"
-            height="70" data-div="div3">
-            <img id="drag3s" src="images/attenuator.png"  height="70" width="60" style="display: none;">
+         
+          <td >
+            <img id="drag1" src="images/klystron mount.png" draggable="true" ondragstart="drag(event)" width="100"
+            height="60" data-div="div1">
+            <img id="drag1s" src="images/klystron mount.png" width="100"
+            height="60" style="display: none;" >
+          </td>
+        </tr>
+        <tr>
+         
+          <td class="imgr" >
+            Klystron Mount
+           </td>
+        </tr>
+        <tr>
+        
+          <tr>
+          <td style="padding-left: 30px;padding-top: 10px;">
+            <img id="drag3" src="images/attenuator.png" draggable="true" ondragstart="drag(event)" width="60"
+            height="60" data-div="div3">
+            <img id="drag3s" src="images/attenuator.png" width="60"
+            height="60" style="display: none;">
           </td>
         </tr>
         <tr>
           <td class="imgr">
             Attenuator
           </td>
-        </tr>
-        <tr>
-          <td style="padding-left: 30px; padding-top: 4px;" >
-            <img id="drag4" src="images/detector.png" draggable="true" ondragstart="drag(event)" width="70"
-            height="30" data-div="div4">
-            <img id="drag4s" src="images/detector.png"  height="30" width="60" style="display: none;">
-          </td>
+          
         </tr>
         
+        
         <tr>
-          <td class="imgr">
-            Detector Mount
-          </td>
-        </tr>
-       
-        <tr>
-          <td >
-            <img id="drag1" src="images/klystron mount.png" draggable="true" ondragstart="drag(event)" width="110"
-            height="70" data-div="div1">
-            <img id="drag1s" src="images/klystron mount.png"  height="70" width="100" style="display: none;" >
+          <td style="padding-top: 10px; padding-left: 10px;">
+            <img id="drag2" src="images/isolator.png" draggable="true" ondragstart="drag(event)" width="70"
+            height="50" data-div="div2">
+            <img  id="drag2s" src="images/isolator.png" width="70"
+            height="50" style="display: none;">
           </td>
         </tr>
         <tr>
-          <td class="imgr">
-           Klystron Mount
-          </td>
+          
+            <td class="imgr">
+              Isolator
+             </td>
+         
         </tr>
-        <tr>
-          <td style="padding-left: 30px; padding-top: 4px;">
-            <img id="drag7" src="images/frequency.png" draggable="true" ondragstart="drag(event)" width="40"
-            height="50" data-div="div7">
-            <img id="drag7s" src="images/frequency.png"  height="40" width="30" style="display: none;" >
-          </td>
-        </tr>
-        <tr>
-          <td class="imgr">
-           Frequency Meter
-          </td>
-        </tr>
-        <tr>
-          <td >
-            <img id="drag8" src="images/slotted-line.png" draggable="true" ondragstart="drag(event)" width="100"
-            height="50" data-div="div8">
-            <img id="drag8s" src="images/slotted-line.png"  height="50" width="90" style="display: none;" >
-          </td>
-        </tr>
-        <tr>
-          <td class="imgr">
-           Slotted Line
-          </td>
-        </tr>
+       <tr>
+            <td style="padding-left: 20px; padding-top: 10px;">
+              <img id="drag4" src="images/slotted-line.png" draggable="true" ondragstart="drag(event)" width="100"
+              height="60" data-div="div4">
+              <img id="drag4s" src="images/slotted-line.png" width="100"
+              height="60" style="display: none;" >
+            </td>
+          </tr>
+          
+          <tr>
+            <td class="imgr">
+Slotted Line
+            </td>
+          </tr>
+         
+          <tr>
+            <td style="padding-left: 40px; padding-top: 10px;" >
+              <img id="drag7" src="images/frequency.png" draggable="true" ondragstart="drag(event)" width="40"
+              height="50" data-div="div7">
+              <img id="drag7s" src="images/frequency.png" width="40"
+              height="50" style="display: none;" >
+            </td>
+          </tr>
+          
+          <tr>
+            <td class="imgr">
+Frequency Meter
+            </td>
+          </tr>
+     
+          
       </table>
-        </td>
-      </tr>
-      </table>
+     
+       </td>
+        </tr>       </table>
     </div>
    
 
@@ -441,8 +504,7 @@ return;
   
     
       <div class="exp">
-      
-  <table id="lab">
+  <table>
 
   <tr> <td>
     
@@ -450,21 +512,21 @@ return;
     <div id="div1" ondrop="drop(event,this)" ondragover="allowDrop(event)"></div>
     <div id="div2" ondrop="drop(event,this)" ondragover="allowDrop(event)"></div>
     <div id="div3" ondrop="drop(event,this)" ondragover="allowDrop(event)"></div>
-    <div id="div7" ondrop="drop(event,this)" ondragover="allowDrop(event)"></div>
+    <div id="div0" ondrop="drop(event,this)" ondragover="allowDrop(event)"></div>
     <div id="div4" ondrop="drop(event,this)" ondragover="allowDrop(event)"></div>
-    <div id="div8" ondrop="drop(event,this)" ondragover="allowDrop(event)"></div>
-
+    <div id="div6" ondrop="drop(event,this)" ondragover="allowDrop(event)"></div>
+    <div id="div7" ondrop="drop(event,this)" ondragover="allowDrop(event)"></div>
+    <div id="div10" ondrop="drop(event,this)" ondragover="allowDrop(event)"></div>
     <div id="con" class="jtk-demo-main">
       <!-- demo -->
      <div class="jtk-demo-canvas canvas-wide animation-demo jtk-surface jtk-surface-nopan" id="canvas">
          <div class="littledot" id="ld1"><label style="position:absolute;top:-22px;left: -1em;">A</label></div>
          <div class="littledot" id="ld2">B </div>
          <div class="littledot" id="ld4">D </div>
-         <div class="littledot" id="ld5"><label style="position:absolute;top:-22px;left: -1em;">E</label></div>
+         <div class="littledot" id="ld5">E </div>
      </div>
      
   </div>
-  
     <div id="stand">
   
      <img id="block1" src="images/block4.jpg">
@@ -480,16 +542,14 @@ return;
   
       <img id="aa" src="images/table.png " width="1000" height="100" >
     </div>
-    
-<h4 id="vv">
-  To Record the Value for V1
-</h4>
+    <h4 id="vv">
+      To Record the Value for V2
+    </h4>
+ 
     <div id="space">
-     
-     
 <img id="croi" src="images/cro.png">
 <h4 id="volt">
-  volt/div = 50mV
+  volt/div = 20mV
 </h4>
     </div>
     <div id="grpwrap" style="height: 70px; width: 90px; " >
@@ -497,7 +557,6 @@ return;
       <canvas id="C1" style="background-image: url('images/SharedScreenshot.jpg'); height: 70px; width: 90px; " ></canvas>
   
   </div>
- 
     <div id="powersupply">
           
       <table>
@@ -524,9 +583,9 @@ return;
        
         <tr>
           <h6 id="name">  Beam Voltage</h6>
-            <label class="switch"  >
+            <label class="switch" >
                 
-              <input disabled type="checkbox"  onclick="myFunction()" id="cch">
+              <input disabled type="checkbox" onclick="myFunction()" id="cch">
              
          <span class="slider round">   </span>
         
@@ -552,10 +611,10 @@ return;
         
               <td id="voltage">
                
-                <h4   class="heading4">Reflector Voltage</h4> 
+                <h4 class="heading4">Reflector Voltage</h4> 
                 
                 
-                <div  id="jog_dial_two"></div>
+                <div id="jog_dial_two"></div>
                 
                   <div id="jog_dial_two_meter_inner1"></div>
               </td>
@@ -599,47 +658,54 @@ return;
                 </td>
               </tr>
                 </table>
-                
+   
 
   </div>
   </td>
 </tr>
-
 <div id="rom">
   <img id="rom1"src="images/empty-room-with-white-brick-walls-studio_107791-1349.jpg" style="max-width: 1000;">
 </div>
-    
+      
       </table>
-      <div id="but">
-        <button id="check" onclick="appear()">Components</button>
-        <button id="check11" disabled>Check Connections</button>
-        <button id="manual"  onclick="shows()">Experiment setup</button>
-        <button id="print" disabled onclick="print()">Print</button>
-        <input type="button" onclick="window.location.href='task9.html';" id="next" value="Next" disabled/>
-        <button id="reset"  onclick="reset()">Reset</button>
-      </div>
-      <div id="prop" style="position: relative; top:70px; left:100px; ">
-          
        
-        <table  border="2px" style=" visibility: none;">
-          
-          <tr>  <input  value="0" id="P1" onclick="cal()" >&nbsp;<output></output></td></tr>
-          
-          
-          <tr><input  value="9.4" id="P2" onclick="cal()" >
-            &nbsp; <output></output>&nbsp;GHz</td></tr>
-          
-          
-          <tr><td> <input value="90" id="P3" onclick="cal()">
-            &nbsp; <output></output><sup>o</sup></td></tr>
-          
-          
-          </table>
-          
-            <div>
-            
 
+          
        
+        
+          
+          
+        
+        <div id="but">
+          <button id="check" onclick="appear()">Components</button>
+           <button id="next" onclick="next()" > More Components</button> 
+           <button id="check11" disabled>Check Connections</button>
+           <button id="manual"  onclick="shows()">Experiment setup</button>
+          <button id="print" disabled onclick="print()">Print</button>
+          <input type="button" onclick="window.location.href='task10.html';" id="next1" value="Next" disabled/>
+          <button id="reset"  onclick="reset()">Reset</button>
+
+        </div>
+
+        <div id="prop" style="position: relative; top:70px; left:100px; ">
+          
+       
+          <table  border="2px" style=" visibility: none;">
+            
+            <tr>  <input  value="0" id="P1" onclick="cal()" >&nbsp;<output></output></td></tr>
+            
+            
+            <tr><input  value="9.4" id="P2" onclick="cal()" >
+              &nbsp; <output></output>&nbsp;GHz</td></tr>
+            
+            
+            <tr><td> <input value="90" id="P3" onclick="cal()">
+              &nbsp; <output></output><sup>o</sup></td></tr>
+            
+            
+            </table>
+            
+              <div>
       </div>
       
     
@@ -653,14 +719,10 @@ return;
 </footer>
 </body>
 
-
-
-
-
-<script src="js/JogDial.js"></script>
+<script src="js/JogDial2.js"></script>
 <script src="js/jsplumb1.js"></script>
 <!-- /JS -->
 
 <!--  demo code -->
-<script src="js/demo1.js"></script>
+<script src="js/demo2.js"></script>
 </html>
