@@ -1,7 +1,0 @@
-[{"question":"Which type of circulator typically has the highest power handling capability?","answers":{"a":"Differential phase shift","b":"Lumped constant","c":"Okada","d":"Field displacement"},"correctAnswer":"a"},
-{"question":"What is the primary difference between a circulator and an isolator?","answers":{"a":"Circulators are round, whereas isolators are not","b":"The isolator has an internally terminated, inaccessible port","c":"Isolators have higher power handling than circulators","d":"Circulators have higher power handling than isolators"},"correctAnswer":"b"},
-{"question":"Which ferrite device can be used instead of a duplexer to isolate a microwave transmitter and receiver when both are connected to the same antenna?","answers":{"a":"Isolator","b":"Magnetron","c":"Simplex","d":"Circulator"},"correctAnswer":"d"},
-{"question":"A modern device that replaces a slotted line is:","answers":{"a":"Digital CRO","b":"Generators","c":"Network analyzers","d":"Computers"},"correctAnswer":"c"},
-{"question":"Reflectometer can also be used as a frequency meter.","answers":{"a":"True","b":"False"},"correctAnswer":"a"}]
-
-
