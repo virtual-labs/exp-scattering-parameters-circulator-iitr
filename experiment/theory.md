@@ -12,22 +12,77 @@ A circulator is a device that transports radio frequency or microwave signals fr
 
 <center>
 
-$$
-Coupling (dB) ={20log_{10}} \frac{V1}{V3}
-$$
- 
+<math style='font-size:20px'>
+<mrow>
+   <mi>Coupling (dB)</mi>  
+                <mo>=</mo>
+               <mi>20</mi>
+                <msub subscriptshift="5px">
+                        <mi>log</mi>
+                        <mn>10</mn>
+                    </msub>
+                <mfrac>
+                        <mi>V1</mi>
+                        <mi>V3</mi>
+                </mfrac>
+            </mrow>
+    </math>
+        --------------------(1)
 </center>
-  
+<br>
+ 
 2.  It is the ratio of power fed to input arm to the input power detected at not coupled port with other port terminated in the matched load.  
     Hence
-    
-<center>
-
-$$
-Isolation (dB) ={20log_{10}} \frac{V1}{V3}
-$$
- 
+   <center>
+ <math style='font-size:20px'>
+            <mrow>
+                    <mi>Isolation (dB)</mi>  
+                <mo>=</mo>
+               <mi>20</mi>
+                <msub subscriptshift="5px">
+                        <mi>log</mi>
+                        <mn>10</mn>
+                    </msub>
+                <mfrac>
+                        <mi>V1</mi>
+                        <mi>V3</mi>
+                </mfrac>
+            </mrow>
+    </math>
+    --------------------(2)
 </center>
+
+### Component List
+
+1. **Microwave Supply**  
+Provides the necessary microwave power to the circulator, enabling the operation and measurement of the signals at different ports.
+
+2. **Isolator**  
+Prevents reflected signals from returning to the microwave source, protecting it from potential damage and ensuring stable operation by allowing unidirectional signal flow.
+
+3. **Frequency Meter**  
+Measures the frequency of the microwave signals being transmitted through the circulator, ensuring accurate characterization and tuning during tests.
+
+4. **Variable Attenuator**  
+Allows for precise control of the signal power entering the circulator, enabling adjustments to analyze the effects of varying input power on isolation and coupling.
+
+5. **Slotted Line**  
+A measurement tool used to visualize standing wave patterns and measure voltage standing wave ratio (VSWR) along the transmission line, aiding in the assessment of signal behavior.
+
+6. **Detector Mount**  
+Holds the detector that measures the output signal power from the circulator, providing data necessary for calculating the isolation and coupling factors.
+
+7. **Cathode Ray Oscilloscope (CRO)**  
+Visualizes the output signal waveforms, allowing for analysis of amplitude, frequency, and phase relationships, which is crucial for evaluating the performance of the circulator.
+
+8. **3-Port Circulator**  
+A non-reciprocal microwave device that routes signals from one port to another while preventing backflow. It is essential for measuring isolation (how much signal is prevented from going back to the input) and coupling factor (how much power is transferred to the other ports).
+
+9. **Matched Terminal**  
+Absorbs excess microwave power at one of the ports, preventing reflections and ensuring that the measurements of isolation and coupling factors are accurate by maintaining proper impedance matching.
+
+
+
 
 ### Block Diagram
 
