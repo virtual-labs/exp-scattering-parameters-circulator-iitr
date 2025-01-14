@@ -1,5 +1,6 @@
 var rightconnection=false;
 var datapoints1 = [];
+var knobFlag=false;
 jsPlumb.ready(function () {
 
     var instance,
@@ -78,7 +79,7 @@ jsPlumb.ready(function () {
         Container: "canvas"
     });
 
-    // suspend drawing and initialise.
+    // suspend drawing and initialize.
     instance.batch(function () {
         var e1 = prepare("ld1"),
             e2 = prepare("ld2"),
@@ -221,11 +222,13 @@ document.getElementById("check11").addEventListener("click", function () {
                   container: 'position-absolute',
                   popup:"swal2-popup"
                 },
-                title:"Good Job",      
-                text:"Correct Connection",
+                title:"Correct Connection!!",      
+                text:"Connection Established",
                 icon:'success',
                 });
-            
+                knobFlag=true;
+                document.getElementById('jog_dial_one').style.cursor='pointer';
+                document.getElementById('jog_dial_two').style.cursor='pointer';
             document.getElementById("name").style.visibility = "visible";
          document.getElementById("cch").disabled= false;
          document.getElementById("manual").disabled= true;
@@ -291,7 +294,7 @@ document.getElementById("check11").addEventListener("click", function () {
                   container: 'position-absolute',
                   popup:"swal2-popup"
                 },
-                text:'Incomplete connections',     
+                text:'Incomplete connections!!',     
                 icon:'warning',
                 });
             return;
